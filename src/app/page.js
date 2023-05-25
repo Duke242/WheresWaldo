@@ -2,8 +2,13 @@
 import { cookies } from 'next/headers';
 import { SignJWT, jwtVerify } from 'jose'
 import Timer from './Timer'
+import Image from './Image';
 import styles from './page.module.css'
-// import { getServerSideProps } from "next";
+import react from 'react';
+// import { useState } from 'react';
+
+// const [clickLocation, setClickLocation] = useState({ left: "0%", top: "0%" });
+
 
 const secret = new TextEncoder().encode(
   'cc7e0d44fd473002f1c42167459001140ec6389b7353f8088f4d9a95f2f596f2',
@@ -14,6 +19,11 @@ const issuer = 'urn:example:issuer'
 const audience = 'urn:example:audience'
 
 export default async function Home(props) {
+  const handleMousePosition = async(e) => {
+		setMousePosition({ x: e.pageX, y: e.pageY });
+    console.log(x, y)
+	};
+
   const cookieStore = cookies();
   let token = cookieStore.get('waldo')?.value
   let start = new Date().getTime()
@@ -28,14 +38,12 @@ export default async function Home(props) {
   console.log(start)
   return (
     <>
-      <header><Timer {...{ start }}/></header>
-      <main className={styles.main}>
-        <img className={styles.img} src='/assets/universe-113.jpg'/>
-      </main>
+      <header className={styles.Timer}>Timer: <Timer {...{ start }}/> s</header>
+      <Image/>
     </>
   )
 }
-
+//coords='829,956,986,1073'
 
 // export async function getServerSideProps(context) {
 //   const { start } = context.req;
