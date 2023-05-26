@@ -4,7 +4,7 @@ import { SignJWT, jwtVerify } from 'jose'
 import Timer from './Timer'
 import Image from './Image';
 import styles from './page.module.css'
-import react from 'react';
+
 // import { useState } from 'react';
 
 // const [clickLocation, setClickLocation] = useState({ left: "0%", top: "0%" });
@@ -19,11 +19,6 @@ const issuer = 'urn:example:issuer'
 const audience = 'urn:example:audience'
 
 export default async function Home(props) {
-  const handleMousePosition = async(e) => {
-		setMousePosition({ x: e.pageX, y: e.pageY });
-    console.log(x, y)
-	};
-
   const cookieStore = cookies();
   let token = cookieStore.get('waldo')?.value
   let start = new Date().getTime()

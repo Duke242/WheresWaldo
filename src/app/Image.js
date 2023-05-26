@@ -42,7 +42,6 @@ function Image(){
                 console.log(found)            
             }}
             />
-
         </map>
         <img useMap='#universe' width='1920' height='2715' className={styles.img} src='/assets/universe-113.jpg'/>
         </main>
