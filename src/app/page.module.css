@@ -8,10 +8,10 @@
 
 .Timer { 
   display: flex;
-  position: absolute;
-  margin-left: 75%;
-  color: green;
+  justify-content: center;
+  color: white;
   font-size: larger;
+  background-color: darkblue;
 }
 
 .Timer:hover {

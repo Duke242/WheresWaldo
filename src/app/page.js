@@ -33,7 +33,7 @@ export default async function Home(props) {
   console.log(start)
   return (
     <>
-      <header className={styles.Timer}>Timer: <Timer {...{ start }}/> s</header>
+      <header className={styles.Timer}>Timer: <Timer {...{ start }}/></header>
       <Image/>
     </>
   )

@@ -10,11 +10,19 @@ export const Timer = ({ start }) => {
         },1000)
         return () => clearInterval(interval)
     }) 
+    const minutes = Math.floor(time / 60);
+    const seconds = `0${Math.round(time % 60)}`.slice(-2);
+
     return (
         <>
-        {time}
+           {minutes}:{seconds}
+            
         </>
     )
 }
+
+// const totalSeconds = 1234;
+// const minutes = Math.floor(totalSeconds / 60);
+// const seconds = totalSeconds % 60;
 
 export default Timer
